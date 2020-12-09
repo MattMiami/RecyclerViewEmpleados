@@ -22,18 +22,18 @@ class EmpleadosAct : AppCompatActivity() {
             val empleadosString = bundle!!.getString("empleado")
             val empleado = JSONObject(empleadosString)
             val name =  empleado["Nombre"]
-            val email = empleado["Email"]
+            val dni = empleado["DNI"]
             val surname = empleado["Apellido"]
             val phone = empleado["Telefono"]
             val foto = empleado["Foto"]
 
             //Para la foto
             Glide.with(this).load(foto).into(imageView2)
-            textView.text = "Empleado: "+name+"Apellido"+surname+"\n"+"Email: "+email+"\n Teléfono: "+phone
+            textView.text = "Empleado: "+name+" "+surname+"\n"+"DNI: "+dni+"\nTeléfono: "+phone
 
             //Enviar email
             btOk.setOnClickListener{
-                Toast.makeText(this, "Email enviado", Toast.LENGTH_SHORT).show()}
+                Toast.makeText(this, "Mensaje enviado a " + name +" Contacto: "+ phone, Toast.LENGTH_SHORT).show()}
             btCancel.setOnClickListener{
                 etml.text.clear()
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()}

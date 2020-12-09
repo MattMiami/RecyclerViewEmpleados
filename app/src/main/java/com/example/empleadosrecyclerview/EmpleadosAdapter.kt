@@ -36,14 +36,14 @@ class EmpleadosAdapter(private val empleados: JSONArray)
     override fun onBindViewHolder(holder: EmpleadosAdapter.ViewHolder, position: Int) {
         //Informacion del empleado en texto
         val empleado: JSONObject = empleados.getJSONObject(position)
-        holder.nameTextView.text = empleado["Nombre"].toString() + " " + empleado["Apellido"].toString()+"\n"+ empleado["Email"].toString()+"\n"+ empleado["Telefono"].toString()+"\n"+ empleado["Direccion"].toString()
+        holder.nameTextView.text = empleado["Nombre"].toString() + " " + empleado["Apellido"].toString()+"\n"+ empleado["DNI"].toString()+"\n"+ empleado["Telefono"].toString()+"\n"+ empleado["Direccion"].toString()
         //La foto del empleado
         val uri: String = empleado["Foto"].toString()
         val name: String = empleado["Nombre"].toString()
         val num: String = empleado["Telefono"].toString()
         Glide.with(holder.itemView.context).load(uri).into(holder.imageView)
         //El toast con la info rápida
-        holder.nameTextView.setOnClickListener{Toast.makeText(holder.itemView.context, "Empleado: "+name+",\n Telefono de Contacto: "+num+" ", Toast.LENGTH_SHORT).show()}
+        holder.nameTextView.setOnClickListener{Toast.makeText(holder.itemView.context, "Empleado: "+name+",\nTelefono de Contacto: "+num+" ", Toast.LENGTH_SHORT).show()}
 
 
         //Para la actividad del empleado, metemos la informacion del empleado seleccionado en un intent

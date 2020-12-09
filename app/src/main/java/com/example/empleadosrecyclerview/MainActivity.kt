@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         val cola = Volley.newRequestQueue(this)
-        var url = "http://iesayala.ddns.net/antoniomateos/empleadosrv.json"
+        var url = "http://iesayala.ddns.net/antoniomateos/Empleados.php"
 
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null, Response.Listener { response ->

@@ -38,7 +38,7 @@ or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
 
 //Creamos el JSON
 
-$json_string = json_encode($empleados);
+$json_string = "{\"Empleados\":" . json_encode($empleados) . "}";
 
 echo $json_string;
 
