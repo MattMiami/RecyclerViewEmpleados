@@ -43,7 +43,7 @@ class EmpleadosAdapter(private val empleados: JSONArray)
         val num: String = empleado["Telefono"].toString()
         Glide.with(holder.itemView.context).load(uri).into(holder.imageView)
         //El toast con la info rápida
-        holder.nameTextView.setOnClickListener{Toast.makeText(holder.itemView.context, "Empleado: "+name+",\nTelefono de Contacto: "+num+" ", Toast.LENGTH_SHORT).show()}
+        holder.nameTextView.setOnClickListener{Toast.makeText(holder.itemView.context, "Empleado: "+name+"\nTelefono de Contacto: "+num+" ", Toast.LENGTH_SHORT).show()}
 
 
         //Para la actividad del empleado, metemos la informacion del empleado seleccionado en un intent
